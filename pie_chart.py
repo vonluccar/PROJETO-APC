@@ -1,6 +1,13 @@
+from typing import Dict, Any, Union
+
 import plotly.graph_objects as go
 import pandas as pd 
 import xlrd
+<<<<<<< Updated upstream
+=======
+marker: Dict[Any, Union[Dict[Any, Union[str, int]], Any]]=dict(colors=colors, line=dict(color='#000000', width=2))
+fig.show()
+>>>>>>> Stashed changes
 
 xlsx=pd.ExcelFile('medalhas_olimpiada2016.xlsx')
 df = pd.read_excel(xlsx, 'medalhas_olimpiada2016')
