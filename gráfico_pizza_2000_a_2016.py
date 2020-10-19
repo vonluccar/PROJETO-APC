@@ -20,7 +20,7 @@ else:
     else:
         if ano_entre_2000_a_2016 == 2008:
             labels = ['Brasil','Canada','USA','Áfica do Sul','Itália','Grécia','Japão','China','Austrália','Inglaterra','Alemanha','Quênia','Rússia','Cuba','Argentina','França']
-            values = [17, 20, 11, 1, 27, 43, 25, 100, 46, 51, 41, 16, 60, 30, 6]
+            values = [17, 20, 112, 1, 27, 43, 25, 100, 46, 51, 41, 16, 60, 30, 6]
 
             fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
             fig.show()
