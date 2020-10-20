@@ -9,7 +9,6 @@ import plotly.express as px
 df = pd.read_csv("numero_de_medalhas.csv")
 app = dash.Dash(__name__)
 
-#---------------------------------------------------------------
 app.layout = html.Div([
     html.Div([
         html.Label(['Número de Medalhas por Países']),
@@ -34,7 +33,6 @@ app.layout = html.Div([
     ]),
 ])
 
-#---------------------------------------------------------------
 @app.callback(
     Output(component_id='the_graph', component_property='figure'),
     [Input(component_id='my_dropdown', component_property='value')]
