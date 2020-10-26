@@ -1,4 +1,4 @@
-import dash  # use Dash version 1.16.0 or higher for this app to work
+import dash 
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input
@@ -15,15 +15,15 @@ app.layout = html.Div([
                           df.country.unique()]),
     html.Div([
         dcc.Graph(id='pie-graph', figure={}, className='six columns'),
-        dcc.Graph(id='my-graph', figure={}, clickData=None, hoverData=None, # I assigned None for tutorial purposes. By defualt, these are None, unless you specify otherwise.
+        dcc.Graph(id='my-graph', figure={}, clickData=None, hoverData=None,
                   config={
-                      'staticPlot': True,     # True, False
-                      'scrollZoom': True,      # True, False
-                      'doubleClick': 'reset',  # 'reset', 'autosize' or 'reset+autosize', False
-                      'showTips': True,       # True, False
-                      'displayModeBar': True,  # True, False, 'hover'
+                      'staticPlot': True,
+                      'scrollZoom': True,
+                      'doubleClick': 'reset',
+                      'showTips': True,
+                      'displayModeBar': True,
                       'watermark': True,
-                      # 'modeBarButtonsToRemove': ['pan2d','select2d'],
+
                         },
                   className='six columns'
                   )
@@ -36,7 +36,7 @@ app.layout = html.Div([
     Input(component_id='dpdn2', component_property='value'),
 )
 def update_graph(data_gapminder):
-    dff = px.data.gapminder()
+    df = px.data.gapminder()
     fig = px.scatter_geo(df, locations="iso_alpha", color="continent",
                      hover_name="country", size="pop",
                      animation_frame="year",
@@ -44,7 +44,6 @@ def update_graph(data_gapminder):
     return fig
 
 
-# Dash version 1.16.0 or higher
 @app.callback(
     Output(component_id='pie-graph', component_property='figure'),
     Input(component_id='my-graph', component_property='hoverData'),
@@ -62,9 +61,6 @@ def update_side_graph(hov_data, clk_data, slct_data, country_chosen):
         return fig2
     else:
         print(f'hover data: {hov_data}')
-        # print(hov_data['points'][0]['customdata'][0])
-        # print(f'click data: {clk_data}')
-        # print(f'selected data: {slct_data}')
         dff2 = df[df.country.isin(country_chosen)]
         hov_year = hov_data['points'][0]['x']
         dff2 = dff2[dff2.year == hov_year]
