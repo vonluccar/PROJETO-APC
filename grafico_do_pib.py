@@ -2,7 +2,7 @@ import jupyter
 import plotly.graph_objects as go
 from plotly import colors
 
-PIB = ['AUSTRALIA', 'CANADA', 'ESTADOS UNIDOS', 'CHINA', 'JAPÃO','AFRICA DO SUL','ITÁLIA','FRANÇA','INGLATERRA','ALEMANHA','QUÊNIA,',
+PIB = ['AUSTRALIA', 'CANADA', 'ESTADOS UNIDOS', 'CHINA', 'JAPÃO','AFRICA DO SUL','ITÁLIA','FRANÇA','INGLATERRA','ALEMANHA','QUÊNIA',
                                                                                                                                'RUSSIA','CUBA','ARGENTINA']
 
 fig = go.Figure(data=[
