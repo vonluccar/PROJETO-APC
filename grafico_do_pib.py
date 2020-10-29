@@ -14,5 +14,5 @@ fig = go.Figure(data=[
 ])
 # Change the bar mode
 
-fig.update_layout(barmode='group')
+fig.update_layout(barmode='group', title='PIBs dos Países por Unidade de Trilhão')
 fig.show()
