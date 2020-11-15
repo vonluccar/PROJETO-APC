@@ -4,7 +4,6 @@ import dash_html_components as html
 import plotly.express as px
 import pandas as pd
 from grafico_do_pib import pib
-import grafico_de_medalhas_por_paises
 from gráfico_map import mapa
 
 
@@ -26,6 +25,3 @@ app.layout = html.Div([
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
-    
-
