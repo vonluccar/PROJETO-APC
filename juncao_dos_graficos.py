@@ -6,7 +6,7 @@ import pandas as pd
 from dash.dependencies import Input, Output
 from grafico_do_pib import pib
 from gráfico_map import mapa
-from potencial_de_investimento import potencial_de_investimento
+from grafico_de_potencial_de_investimento import potencial_de_investimento
 import numpy as np
 
 df = pd.read_csv("numero_de_medalhas.csv")
