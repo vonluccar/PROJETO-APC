@@ -6,6 +6,8 @@ import pandas as pd
 from dash.dependencies import Input, Output
 from grafico_do_pib import pib
 from gráfico_map import mapa
+from potencial_de_investimento import potencial_de_investimento
+import numpy as np
 
 df = pd.read_csv("numero_de_medalhas.csv")
 app = dash.Dash(__name__)
@@ -41,7 +43,13 @@ app.layout = html.Div([
             html.Div(
                 dcc.Graph(
                     figure=mapa()
-                ), style={'marginTop':180})
+                ), style={'marginTop':180}),
+
+            html.Div(
+                dcc.Graph(
+                    figure=potencial_de_investimento()
+                ), style={'marginTop':500},
+            )
                 
     ]
     )
