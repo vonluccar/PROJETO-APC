@@ -15,7 +15,7 @@ def pib():
     ])
     # Change the bar mode
 
-    fig.update_layout(barmode='group',title=str(object="PIB's dos Países Estudados"))
+    fig.update_layout(barmode='group',title=str(object="PIB's dos Países em Unidade de Trilhão"))
     
     return fig
 pib()
