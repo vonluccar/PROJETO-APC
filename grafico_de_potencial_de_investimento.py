@@ -41,6 +41,9 @@ def potencial_de_investimento():
 			orientation='h')
 	])
 
+
+
+
 	# Add dropdown
 	plot.update_layout(
 		updatemenus=[
@@ -79,7 +82,7 @@ def potencial_de_investimento():
 								}]),
 				]),
 			)
-		])
+		], height=800)
 
 	return plot
 

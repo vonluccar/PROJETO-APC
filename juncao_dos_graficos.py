@@ -13,6 +13,7 @@ df = pd.read_csv("numero_de_medalhas.csv")
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
+
         html.Div(
         dcc.Graph(
             figure=mapa()
@@ -26,7 +27,7 @@ app.layout = html.Div([
         html.Div(
             dcc.Graph(
                 figure=potencial_de_investimento()
-            ), style={'marginTop':500},
+            ), style={'marginTop':180},
         ),
 
     html.Div([
