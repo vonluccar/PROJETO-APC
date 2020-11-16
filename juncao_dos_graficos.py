@@ -15,6 +15,23 @@ app = dash.Dash(__name__)
 app.layout = html.Div([
 
         html.Div(
+            [
+                html.H1(children='Dados para Investimentos em Esportes Olímpicos',
+                        className='ten columns'),
+                html.Img(
+                    id='dash_imagem.png',
+                    className='three columns',
+                    style={
+                        'height': '15%',
+                        'width': '15%',
+                        'float': 'right',
+                        'position': 'relative',
+                        'margin-top': 10,
+                    },
+                ),]
+        ),
+
+        html.Div(
         dcc.Graph(
             figure=mapa()
         ), style={'marginTop':180},),
