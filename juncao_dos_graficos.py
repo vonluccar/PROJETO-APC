@@ -13,6 +13,22 @@ df = pd.read_csv("numero_de_medalhas.csv")
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
+        html.Div(
+        dcc.Graph(
+            figure=mapa()
+        ), style={'marginTop':180},),
+
+        html.Div(
+            dcc.Graph(
+                figure=pib()
+            ), style={'marginTop':180}),
+
+        html.Div(
+            dcc.Graph(
+                figure=potencial_de_investimento()
+            ), style={'marginTop':500},
+        ),
+
     html.Div([
         html.Label(['Número de Medalhas por Países']),
         dcc.Dropdown(
@@ -34,25 +50,8 @@ app.layout = html.Div([
     html.Div([
         dcc.Graph(id='the_graph')
     ]),
-    html.Div([
-            html.Div(
-            dcc.Graph(
-                figure=pib()
-            ), style={'marginTop':180},),
 
-            html.Div(
-                dcc.Graph(
-                    figure=mapa()
-                ), style={'marginTop':180}),
-
-            html.Div(
-                dcc.Graph(
-                    figure=potencial_de_investimento()
-                ), style={'marginTop':500},
-            )
-                
-    ]
-    )
+    
 ])
 
 @app.callback(
