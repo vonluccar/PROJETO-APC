@@ -1,0 +1,10 @@
+.center{
+    max-width: widht 1100px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+header{
+    padding: 9px 0;
+    text-align: center;
+    background: darkorchid;
+}
