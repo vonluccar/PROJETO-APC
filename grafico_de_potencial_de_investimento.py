@@ -82,7 +82,7 @@ def potencial_de_investimento():
 								}]),
 				]),
 			)
-		], height=800)
+		], height=800, title=str(object="Potencial de Investimento"))
 
 	return plot
 
