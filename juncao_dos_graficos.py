@@ -8,9 +8,12 @@ from grafico_do_pib import pib
 from gráfico_map import mapa
 from grafico_de_potencial_de_investimento import potencial_de_investimento
 import numpy as np
+import base64
 
 df = pd.read_csv("numero_de_medalhas.csv")
 app = dash.Dash(__name__)
+image_filename = 'arcos_olimpicos.png'
+encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 app.layout = html.Div([
 
@@ -19,7 +22,7 @@ app.layout = html.Div([
                 html.H1(children='Dados para Investimentos em Esportes Olímpicos',
                         className='ten columns'),
                 html.Img(
-                    id='dash_imagem.png',
+                    src='data:image/png;base64,{}'.format(encoded_image.decode()),
                     className='three columns',
                     style={
                         'height': '15%',
