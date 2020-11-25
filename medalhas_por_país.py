@@ -59,8 +59,7 @@ def update_ograf(drop):
 
     piechart=px.pie(
             data_frame=dff,
-            label=drop,
-            value=drop,
+            names=drop,
             hole=.3,
             )
 
