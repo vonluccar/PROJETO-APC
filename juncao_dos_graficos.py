@@ -11,43 +11,30 @@ import numpy as np
 import base64
 
 df = pd.read_csv("numero_de_medalhas.csv")
+
 app = dash.Dash(__name__)
-image_filename = 'arcos_olimpicos.png'
-encoded_image = base64.b64encode(open(image_filename, 'rb').read())
 
 app.layout = html.Div([
 
-        html.Div(
-            [
-                html.H1(children='Dados para Investimentos em Esportes Olímpicos',
-                        className='ten columns'),
-                html.Img(
-                    src='data:image/png;base64,{}'.format(encoded_image.decode()),
-                    className='three columns',
-                    style={
-                        'height': '15%',
-                        'width': '15%',
-                        'float': 'right',
-                        'position': 'relative',
-                        'margin-top': 10,
-                    },
-                ),]
-        ),
+        html.Div([
+            html.H2(""),
+            html.Img(src="/assets/icon.png")],
+            className="banner"),
 
         html.Div(
         dcc.Graph(
             figure=mapa()
-        ), style={'marginTop':180},),
+        ), style={'marginTop':180},className="mapa"),
 
         html.Div(
             dcc.Graph(
                 figure=pib()
-            ), style={'marginTop':180}),
+            ), style={'marginTop':180},className="pib"),
 
         html.Div(
             dcc.Graph(
                 figure=potencial_de_investimento()
-            ), style={'marginTop':180},
+            ), style={'marginTop':180},className="Potencial"
         ),
 
     html.Div([
