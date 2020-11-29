@@ -9,15 +9,16 @@ from dash.dependencies import Input, Output
 ps=pd.read_csv('pasta1.csv', encoding='UTF-8', sep=';')
 app = dash.Dash(__name__)
 o=0
-available_indicators = ps['países'].unique()
 pt=ps[ps['países']==2004]
-
 
 for i in ps['países']:
     w=len(ps[ps['países']==i])
+    print(i)
     if w<5:
-        ps=ps.drop(i)
+        ps=ps.drop(ps.loc[ps['países']==i].index)
 print(ps)
+
+available_indicators = ps['países'].unique()
 
 app.layout=html.Div([
     html.Label(['Número de Medalhas por Países']),
@@ -29,34 +30,88 @@ app.layout=html.Div([
         value=['ouro','prata','bronze'],
         style={"width": "50%"}
     ),
-        dcc.Dropdown(
-            id='yearslider',
-            options=[
-                {'label': year, 'value': year}for year in ps['ano'].unique()
-                ],
-            value='ano',
-            style={"width": "50%"}
+    dcc.Dropdown(
+        id='yearslider',
+        options=[
+            {'label': year, 'value': year} for year in ps['ano'].unique()
+            ],
+        value='ano',
+        style={"width": "50%"}
     ),
     
     html.Div([
-    dcc.Graph(id='grap')
+    dcc.Graph(id='the_chart')
 ])
 ])
     
 
 @app.callback(
-    Output(component_id='grap', component_property='figure'),
+    Output(component_id='the_chart', component_property='figure'),
     Input(component_id='drop', component_property='value'),
     Input(component_id='yearslider', component_property='value'),
 )
 
-def update_graph(drop, yearslider):
-    dff = ps[ps['ano']==yearslider]
-    dff = dff[dff['países']==drop]
+def generate_chart(drop, yearslider):
+    if yearslider==2016:
+        dff = ps[ps['ano']==yearslider]
+        for i in dff:
+            if i==drop:
+                dff=dff[dff['países']==i]
+        print(dff)
 
-    piechart=px.pie(dff, names=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
+        if len(dff)==1:
+            piechart=px.pie(dff, labels=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
 
-    return (piechart)
+            return (piechart)
+
+    if yearslider==2012:
+        dff = ps[ps['ano']==yearslider]
+        for i in dff:
+            if i==drop:
+                dff=dff[dff['países']==i]
+        print(dff)
+
+        if len(dff)==1:
+            piechart=px.pie(dff, labels=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
+
+            return (piechart)
+
+    if yearslider==2008:
+        dff = ps[ps['ano']==yearslider]
+        for i in dff:
+            if i==drop:
+                dff=dff[dff['países']==i]
+        print(dff)
+
+        if len(dff)==1:
+            piechart=px.pie(dff, labels=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
+
+            return (piechart)
+
+    if yearslider==2004:
+        dff = ps[ps['ano']==yearslider]
+        for i in dff:
+            if i==drop:
+                dff=dff[dff['países']==i]
+        print(dff)
+        
+        if len(dff)==1:
+            piechart=px.pie(dff, labels=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
+
+            return (piechart)
+
+    if yearslider==2000:
+        dff = ps[ps['ano']==yearslider]
+        for i in dff:
+            if i==drop:
+                dff=dff[dff['países']==i]
+        print(dff)
+        if len(dff)==1:
+            piechart=px.pie(dff, labels=['ouro','prata','broze'], values=[dff['ouro'],dff['prata'],dff['bronze']])
+
+            return (piechart)
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+    
