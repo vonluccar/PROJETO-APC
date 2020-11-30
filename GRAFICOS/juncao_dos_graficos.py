@@ -8,7 +8,7 @@ from GRAFICOS.grafico_do_pib import pib
 from GRAFICOS.gráfico_map import mapa
 from GRAFICOS.grafico_de_potencial_de_investimento import potencial_de_investimento
 
-df = pd.read_csv("../DATA/numero_de_medalhas.csv")
+df = pd.read_csv("../data/numero_de_medalhas.csv")
 
 app = dash.Dash(__name__)
 
