@@ -39,7 +39,7 @@ app.layout = html.Div([
         ), style={'marginTop': 180}, className="Potencial"
     ),
 
-    #Estruturação do grafico de pizza (Problema do Callback)
+    #Estruturação do grafico de pizza (Callback)
     html.Div([
         html.Label(['Número de Medalhas por Países']),
         dcc.Dropdown(
@@ -67,9 +67,12 @@ app.layout = html.Div([
     Output(component_id='the_graph', component_property='figure'),
     [Input(component_id='my_dropdown', component_property='value'), ]
 )
+
+#Update do Gráfico de Pizza
 def update_graph(my_dropdown):
     dff = df
 
+    #Definições do Gráfico de Pizza
     piechart = px.pie(
         data_frame=dff,
         names=my_dropdown,
@@ -78,6 +81,6 @@ def update_graph(my_dropdown):
 
     return (piechart)
 
-
+#Código do Dash (Responsável pelo server da página)
 if __name__ == '__main__':
     app.run_server(debug=True)
