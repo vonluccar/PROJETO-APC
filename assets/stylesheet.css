@@ -17,7 +17,7 @@
 .banner Img{
     position: relative;
     float: right;
-    right: 800px;
+    right: 900px;
     height: 75px;
     border-radius: 37px;
 }
@@ -28,30 +28,12 @@ body {  background-image: url("arcos4.png");
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100%;
-        
 
-      
-      
+
+
+
    }
-.mapa {position: relative;
-    float: right;
-    right: 100px;
-    float:top;
-    top:0px;
-    }
-
-.pib{position: relative;
-        float: right;
-        right: 300px;
-        float:top;
-        top:600px;}
-
-.Potencial{position: relative;
-    float: top;
-    top:2200px;
-    
-    }
-
-.pie{width: 400px;
-    height: 800px;}
-
+.pie{float: top;
+    top:500px}
+.chart{float: top;
+    top:500px}

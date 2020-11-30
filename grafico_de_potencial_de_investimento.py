@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 def potencial_de_investimento():
 	x = ['Australia', 'Canada', 'Brasil', 'Estados Unidos', 'China', 'Japão', 'Africa do Sul', 'Itália', 'França',
-		 'Inglaterra', 'Alemanha', 'Quênia,', 'Russia', 'Cuba', 'Argentina']
+		 'Inglaterra', 'Alemanha', 'Quênia', 'Russia', 'Cuba', 'Argentina','Grecia']
 
 	plot = px.Figure(data=[go.Bar(
 		name='2000',
