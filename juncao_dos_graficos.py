@@ -4,11 +4,11 @@ import dash_html_components as html
 import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
-from GRAFICOS.grafico_do_pib import pib
-from GRAFICOS.gráfico_map import mapa
-from GRAFICOS.grafico_de_potencial_de_investimento import potencial_de_investimento
+from grafico_do_pib import pib
+from gráfico_map import mapa
+from grafico_de_potencial_de_investimento import potencial_de_investimento
 
-df = pd.read_csv("../data/numero_de_medalhas.csv")
+df = pd.read_csv("data/numero_de_medalhas.csv")
 
 app = dash.Dash(__name__)
 
@@ -16,7 +16,7 @@ app.layout = html.Div([
 
     html.Div([
         html.H2(""),
-        html.Img(src="../assets/icon.PNG")],
+        html.Img(src="assets/icon.PNG")],
         className="banner"),
 
     html.Div(

@@ -6,7 +6,7 @@ import plotly.express as px
 import pandas as pd
 from dash.dependencies import Input, Output
 
-ps=pd.read_csv('../data/Pasta1.csv', encoding='UTF-8', sep=';')
+ps=pd.read_csv('data/Pasta1.csv', encoding='UTF-8', sep=';')
 app = dash.Dash(__name__)
 ps.head()
 print(ps.loc[1])
