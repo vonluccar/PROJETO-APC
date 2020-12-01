@@ -150,3 +150,7 @@ def generate_chart(drop, yearslider):
 #Código do Dash (Responsável pelo server da página)
 if __name__ == '__main__':
     app.run_server(debug=True)
+
+
+
+    #finalização
