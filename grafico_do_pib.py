@@ -16,6 +16,5 @@ def pib():
     ])
 
     fig.update_layout(barmode='group',title=str(object="PIB's dos Países em Unidade de Trilhão")) #Atualização do design do grafico: Barmode se refere a como as barras vão se comportar/Title define o Título do grafico
-    
     return fig
 pib()
