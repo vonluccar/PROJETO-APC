@@ -58,27 +58,27 @@ def potencial_de_investimento():
 					dict(label="2000", #Titulo do botão
 						 method="update", #Método de atualização das informações
 						 args=[{"visible": [True, False, False, False, False]}, #Visibilidade das barras de cada ano
-							   {"title": "Medalha por PIB no Ano 2000", #Titulo que surge ao selecionar o Botão
+							   {"title": "Potencial de Investimento no Ano 2000", #Titulo que surge ao selecionar o Botão
 								}]),
 					dict(label="2004", #Titulo do botão
 						 method="update", #Método de atualização das informações
 						 args=[{"visible": [False, True, False, False, False]}, #Visibilidade das barras de cada ano
-							   {"title": "Medalha por PIB no Ano 2004", #Titulo que surge ao selecionar o Botão
+							   {"title": "Potencial de Investimento no Ano 2004", #Titulo que surge ao selecionar o Botão
 								}]),
 					dict(label="2008", #Titulo do botão
 						 method="update", #Método de atualização das informações
 						 args=[{"visible": [False, False, True, False, False]}, #Visibilidade das barras de cada ano
-							   {"title": "Medalha por PIB no Ano 2008", #Titulo que surge ao selecionar o Botão
+							   {"title": "Potencial de Investimento no Ano 2008", #Titulo que surge ao selecionar o Botão
 								}]),
 					dict(label="2012", #Titulo do botão
 						 method="update", #Método de atualização das informações
 						 args=[{"visible": [False, False, False, True, False]}, #Visibilidade das barras de cada ano
-							   {"title": "Medalha por PIB no Ano 2012", #Titulo que surge ao selecionar o Botão
+							   {"title": "Potencial de Investimento no Ano 2012", #Titulo que surge ao selecionar o Botão
 								}]),
 					dict(label="2016", #Titulo do botão
 						 method="update", #Método de atualização das informações
 						 args=[{"visible": [False, False, False, False, True]}, #Visibilidade das barras de cada ano
-							   {"title": "Medalha por PIB no Ano 2016", #Titulo que surge ao selecionar o Botão
+							   {"title": "Potencial de Investimento no Ano 2016", #Titulo que surge ao selecionar o Botão
 								}]),
 				]),
 			)

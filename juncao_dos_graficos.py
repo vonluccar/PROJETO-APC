@@ -74,12 +74,12 @@ app.layout = html.Div([
     ]),
 
     html.Div([
-        html.Label(['Número de Medalhas por Países']),
+        html.Label(['Número de Medalhas por Países Classificadas']),
         dcc.Dropdown(
             id='drop',
             options=[
                      {'label': i, 'value': i} for i in available_indicators], #Percorre todos os países avaliados e os utiliza como parametro no Dropdown
-
+            
             value=['ouro','prata','bronze'],
             style={"width": "50%"}
         ),
@@ -95,7 +95,7 @@ app.layout = html.Div([
         html.Div([
         dcc.Graph(id='the_chart')
     ]),
-])
+],style={'marginTop':180}),
 
 ])
 
@@ -143,7 +143,7 @@ def generate_chart(drop, yearslider):
     fig = go.Figure(data=[go.Bar(y=(dff['ouro']), name='Ouro'),
                           go.Bar(y=(dff['prata']), name='Prata'),
                           go.Bar(y=(dff['bronze']), name='Bronze')])
-    fig.update_layout(barmode='group')
+    fig.update_layout(barmode='group'),
 
     return fig
 
