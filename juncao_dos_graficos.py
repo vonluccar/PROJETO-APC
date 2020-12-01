@@ -74,7 +74,7 @@ app.layout = html.Div([
     ]),
 
     html.Div([
-        html.Label(['Número de Medalhas por Países Classificadas']),
+        html.Label(['Números e Tipos de Medalhas por País']),
         dcc.Dropdown(
             id='drop',
             options=[
@@ -146,38 +146,6 @@ def generate_chart(drop, yearslider):
     fig.update_layout(barmode='group'),
 
     return fig
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #Código do Dash (Responsável pelo server da página)
 if __name__ == '__main__':
